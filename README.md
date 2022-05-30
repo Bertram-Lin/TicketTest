@@ -1,6 +1,6 @@
 # TicketTest
 ## task1
-##### 1.權限角色分為admin、QA、RD、PM
+#### 1.權限角色分為admin、QA、RD、PM
 
 ### 2.admin管理後台資料庫
 ### 3.QA新增刪除修改ticket
