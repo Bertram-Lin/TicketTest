@@ -37,7 +37,23 @@
 | Priority  | ForeignKey.Prioritys|
 | isResolve  | BooleanField|
 ## UI
-<img src="img/Django/1.JPG" width="70%">
+### 登入頁
+<img src="img/task1.JPG" width="70%">
+
+### 列表頁
+<img src="img/task2.JPG" width="70%">
+
+### QA新增ticket頁面
+<img src="img/task3.JPG" width="70%">
+
+### QA修改刪除ticket頁面
+<img src="img/task4.JPG" width="70%">
+
+### RD/PM標記ticket頁面
+<img src="img/task5.JPG" width="70%">
+
+### admin後台管理頁面
+<img src="img/task6.JPG" width="70%">
 
 ## task4
 ### url:http://127.0.0.1:8000/LoginApi/{parameter}/{parameter}
