@@ -38,22 +38,22 @@
 | isResolve  | BooleanField|
 ## UI
 ##### 登入頁
-<img src="img/task1.JPG" width="70%">
+<img src="img/task1.JPG" width="100%">
 
 ##### 列表頁
-<img src="img/task2.JPG" width="70%">
+<img src="img/task2.JPG" width="100%">
 
 ##### QA新增ticket頁面
-<img src="img/task3.JPG" width="70%">
+<img src="img/task3.JPG" width="100%">
 
 ##### QA修改刪除ticket頁面
-<img src="img/task4.JPG" width="70%">
+<img src="img/task4.JPG" width="100%">
 
 ##### RD/PM標記ticket頁面
-<img src="img/task5.JPG" width="70%">
+<img src="img/task5.JPG" width="100%">
 
 ##### admin後台管理頁面
-<img src="img/task6.JPG" width="70%">
+<img src="img/task6.JPG" width="100%">
 
 ## task4
 ##### url:http://127.0.0.1:8000/LoginApi/{parameter}/{parameter}
