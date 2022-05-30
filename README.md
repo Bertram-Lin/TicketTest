@@ -36,6 +36,9 @@
 | Severity  | ForeignKey.Severitys|
 | Priority  | ForeignKey.Prioritys|
 | isResolve  | BooleanField|
+## UI
+<img src="img/Django/1.JPG" width="70%">
+
 ## task4
 ### url:http://127.0.0.1:8000/LoginApi/{parameter}/{parameter}
 ### 資料格式:JSON
