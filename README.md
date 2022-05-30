@@ -1,34 +1,33 @@
 # TicketTest
 ## task1
-#### 1.權限角色分為admin、QA、RD、PM
-
-### 2.admin管理後台資料庫
-### 3.QA新增刪除修改ticket
-### 4.RD標記以解決
-### 5.PM標記嚴重性以及緊急程度
+##### 1.權限角色分為admin、QA、RD、PM
+##### 2.admin管理後台資料庫
+##### 3.QA新增刪除修改ticket
+##### 4.RD標記以解決
+##### 5.PM標記嚴重性以及緊急程度
 ## task2
-### 使用Python Django
+##### 使用Python Django
 ## task3
 ## models
-### PermissionRole
+##### PermissionRole
 | 欄位名 | 資料格式|
 |  ---- | ----    |
 | Role  | CharField|
-### login
+##### login
 | 欄位名 | 資料格式|
 |  ---- | ----    |
 | user_id  | CharField|
 | password  | CharField|
 | PermissionRole  | ForeignKey.PermissionRole|
-### Severitys
+##### Severitys
 | 欄位名 | 資料格式|
 |  ---- | ----    |
 | severity  | CharField|
-### Prioritys
+##### Prioritys
 | 欄位名 | 資料格式|
 |  ---- | ----    |
 | priority  | CharField|
-### ticket
+##### ticket
 | 欄位名 | 資料格式|
 |  ---- | ----    |
 | tid  | primary_key.AutoField|
@@ -38,28 +37,28 @@
 | Priority  | ForeignKey.Prioritys|
 | isResolve  | BooleanField|
 ## UI
-### 登入頁
+##### 登入頁
 <img src="img/task1.JPG" width="70%">
 
-### 列表頁
+##### 列表頁
 <img src="img/task2.JPG" width="70%">
 
-### QA新增ticket頁面
+##### QA新增ticket頁面
 <img src="img/task3.JPG" width="70%">
 
-### QA修改刪除ticket頁面
+##### QA修改刪除ticket頁面
 <img src="img/task4.JPG" width="70%">
 
-### RD/PM標記ticket頁面
+##### RD/PM標記ticket頁面
 <img src="img/task5.JPG" width="70%">
 
-### admin後台管理頁面
+##### admin後台管理頁面
 <img src="img/task6.JPG" width="70%">
 
 ## task4
-### url:http://127.0.0.1:8000/LoginApi/{parameter}/{parameter}
-### 資料格式:JSON
-### 功能名稱:LoginApi(系統登入)
+##### url:http://127.0.0.1:8000/LoginApi/{parameter}/{parameter}
+##### 資料格式:JSON
+##### 功能名稱:LoginApi(系統登入)
 <table>
 <tr>
 <th width="120">輸入參考</th>
@@ -82,7 +81,7 @@
 </tr>
 </table>
 
-### 回傳結果
+##### 回傳結果
 <table>
 <tr>
 <th width="300">輸出參考</th>
