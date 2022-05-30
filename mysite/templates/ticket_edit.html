@@ -1,0 +1,94 @@
+<!-- ticket_edit.html -->
+{% extends "base.html" %}
+{% block title %}{{ ticket_data.Summary | default:"找不到" }}{% endblock %}
+{% block content %}
+<script>
+    function ticket_delete() {
+        var del_id = document.getElementById('tid').value;
+        window.location.href = '/ticket_delete/' + del_id + '/'
+   }
+</script>
+<form name="my form" action="." method="POST">
+{% csrf_token %}
+<div class="container" align="center">
+    <!-- 這裡放我們要呈現的內容 -->
+    {% if ticket_data %}
+        <table>
+            <tr>
+                <th align="right">
+                    標  題&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <input type="text" id="Summary" name="Summary" size="30" value="{{ ticket_data.Summary }}" {{isRD}} {{isPM}}/>
+                    <input type="hidden" id="tid" name="tid" value="{{ tid }}"/>
+                </td>
+            </tr>
+            <tr>
+                <th align="right">
+                    描  述&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <textarea cols="30" rows="8" id="description" name="description" {{isRD}} {{isPM}}>{{ ticket_data.Description }}</textarea>
+                </td>
+            </tr>
+            {% if PermissionRole != "QA" %}
+            <tr>
+                <th align="right">
+                    嚴 重 性&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <select id="severity" name="severity" {{isRD}}>
+                        <option value="">------</option>
+                        {% for s in severitys %}
+                            <option value="{{ s.severity }}" 
+                                {% if s.severity == severity %}selected="selected"{% endif %}>
+                                {{ s.severity|capfirst }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th align="right">
+                    優 先 性&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <select id="priority" name="priority" {{isRD}}>
+                        <option value="">------</option>
+                        {% for p in prioritys %}
+                            <option value="{{ p.priority }}"
+                                {% if p.priority == priority %}selected="selected"{% endif %}>
+                                {{ p.priority }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th align="right">
+                    是否解決&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <input type=radio name="isResolve" value="True" {% if ticket_data.isResolve == True %}checked{% endif %} {{isPM}}>是
+                    <input type=radio name="isResolve" value="False" {% if ticket_data.isResolve == False %}checked{% endif %} {{isPM}}>否
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="submit" value="確認" class="abutton" />
+                    <input type="button" value="回上頁" onclick="history.go(-1)" />
+                    {% if PermissionRole == "QA" %}
+                        <input type="button" value="刪除" onclick="javascript:if(confirm('確定刪除此筆資料??')==1) {return ticket_delete();}" />
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    {% else %}
+        <h2>
+            找不到資料
+        </h2>
+    {% endif %}
+</div>
+</form>
+{% endblock %}

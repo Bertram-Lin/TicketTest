@@ -1,0 +1,53 @@
+<!-- ticket_list.html -->
+{% extends "base.html" %}
+{% block title %}Bug列表{% endblock %}
+{% block content %}
+<script>
+     function AddTicket() {
+        window.location.href = '/ticket_add'
+    }
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                    <h3>~~BUG清單~~</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% load static %}
+    <div align='right'>
+
+        {% if PermissionRole == "QA" %}
+        <a href="#" onclick="AddTicket()" id="ticket_add"><img src="{% static 'images/plus.png' %}" width='50'/></a>
+        {%endif%}
+        <p>權限角色：{{PermissionRole}}</p>
+    </div>
+    <div class="row">
+        {% for t in tickets %}
+        <div class="col-sm-12 col-md-6">
+            <div class="panel {%cycle 'panel-primary' 'panel-info' 'panel-warning' 'panel-success' %}">
+                <div class="panel-heading">
+                    <table width="100%">
+                        <tr>
+                            <td align="center">
+                                <a href="/ticket_edit/{{t.tid}}"><span style="color: red;font-size: 18px;font-weight:bold;">{{ t.Summary }}</span></a>
+                            </td>
+                            <!-- <td align="right">
+                                <i><small>{{ p.pub_time }}</small></i>
+                            </td> -->
+                        </tr>
+                    </table>
+                </div>
+                <!-- <div class="panel-body">{{ p.message | linebreaks }}</div> -->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,23 @@
+<!-- login.html -->
+{% extends "base.html" %}
+{% block title %}登入{% endblock %}
+{% block content %}
+<div class="container" align="center">
+    {% if message %}
+    <div class="alert alert-warning">
+        {{ message }}
+    </div>
+    {% endif %}
+    <form name="my form" action="/" method="GET">
+        <br/><br/>
+        <label for="user_id">帳號:</label>
+        <input id="user_id" type="text" name="user_id"><br/><br/>
+        <label for="user_pass">密碼:</label>
+        <input id="user_pass" type="password" name="user_pass"><br/><br><br><br/><br/>
+        <input type="submit" value="登入">
+        <input type="reset" value="清除重填">
+    </form>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,68 @@
+<!-- ticket_add.html -->
+{% extends "base.html" %}
+{% block title %}新增Ticket{% endblock %}
+{% block content %}
+<form name="my form" action="." method="POST">
+{% csrf_token %}
+<div class="container" align="center">
+    <!-- 這裡放我們要呈現的內容 -->
+        <table>
+            <tr>
+                <th align="right">
+                    標  題&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <input type="text" id="Summary" name="Summary" size="30" value="" />
+                </td>
+            </tr>
+            <tr>
+                <th align="right">
+                    描  述&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <textarea cols="30" rows="8" id="description" name="description"></textarea>
+                </td>
+            </tr>
+            <!-- <tr>
+                <th align="right">
+                    嚴 重 性&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <select>
+                        {% for s in severitys %}
+                        <option value="{{ s.severity }}">{{ s.severity }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th align="right">
+                    優 先 性&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <select>
+                        {% for p in prioritys %}
+                        <option value="{{ p.priority }}">{{ p.priority }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th align="right">
+                    是否解決&nbsp;&nbsp;
+                </th>
+                <td align="left">
+                    <input type=radio name="isResolve" value="True" >是
+                    <input type=radio name="isResolve" value="False" >否
+                </td>
+            </tr> -->
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="submit" value="確認" class="abutton" />
+                    <input id="btnback" name="btnback" type="button" value="回上頁" onclick="history.go(-1)" />
+                </td>
+            </tr>
+        </table>
+</div>
+</form>
+{% endblock %}
